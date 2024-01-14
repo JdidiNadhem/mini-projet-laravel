@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::create('keynotespeakers', function (Blueprint $table) {
+        Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('description');
-            $table->string('website');
-            $table->string('image');
+            $table->string('vpath');
+            $table->string('title');
+            $table->integer('order');
             $table->timestamps();
         });
     }
@@ -29,6 +26,5 @@ return new class extends Migration
     public function down(): void
     {
         //
-        Schema::dropIfExists('keynotespeakers');
     }
 };
